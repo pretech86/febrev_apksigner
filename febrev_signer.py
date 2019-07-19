@@ -14,9 +14,9 @@ def signer():
     if a =="y" or a=="Y":
          print("HERE WE GO......!")
          app_path=input("enter the path of your app (eg: /root/Desktop/app.apk): ")
-         while os.path.isfile(app_path):
-              os.system("apksigner sign -key febrev.pk8 -cert febrev.x509.pem "+app_path)
-              print("signed successfully........!!")
+         if os.path.isfile(app_path):
+             os.system("apksigner sign -key febrev.pk8 -cert febrev.x509.pem "+app_path)
+             print("signed successfully........!!")
          else:
              print("ERROR : PATH/FILE NOT FOUND BY FEBREV signer!!!")
              print("please input a valid path/file...")
